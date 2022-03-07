@@ -15,6 +15,13 @@ jobs:
     steps:
       - name: Checkout scripts
         uses: actions/checkout@v2
+      - name: Checkout snapshot
+        uses: actions/checkout@v2
+        with:
+          repository: Element-0/snapshot
+          path: snapshot
+          submodules: recursive
+          token: ${{ secrets.PUSH_SNAPSHOT_TOKEN }}
       - name: Setup git user
         run: |
           . .\scripts\Invoke-NativeCommand.ps1
