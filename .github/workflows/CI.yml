@@ -21,7 +21,7 @@ jobs:
           repository: Element-0/snapshot
           path: snapshot
           submodules: recursive
-          token: ${{ secrets.PUSH_SNAPSHOT_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Setup git user
         run: |
           . .\scripts\Invoke-NativeCommand.ps1
