@@ -166,7 +166,7 @@ jobs:
           path: dist/
       - name: Update snapshot
         if: success()
-        run: |
-          Push-Location snapshot
-          git push
-          Pop-Location
+        uses: actions/upload-artifact@v3
+        with:
+          name: ez_artifact
+          path: .
